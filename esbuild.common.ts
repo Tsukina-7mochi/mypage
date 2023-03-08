@@ -2,7 +2,6 @@ import * as esbuild from 'esbuild';
 import { posix } from 'posix';
 import { sassPlugin } from 'esbuild-sass-plugin';
 import { esbuildCachePlugin } from 'esbuild-cache-plugin';
-import importMap from './import_map.browser.json' assert {type: 'json'};
 
 const srcPath = 'src';
 const destPath = 'dist';
