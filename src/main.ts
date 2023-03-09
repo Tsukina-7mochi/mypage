@@ -1,4 +1,4 @@
-import './style.scss';
+import './style/style.scss';
 
 globalThis.addEventListener('load', () => {
 });
