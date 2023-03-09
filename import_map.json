@@ -3,6 +3,7 @@
     "cliffy": "https://deno.land/x/cliffy@v0.25.7/mod.ts",
     "esbuild": "https://deno.land/x/esbuild@v0.17.11/mod.js",
     "esbuild-cache-plugin": "https://deno.land/x/esbuild_cache_plugin@v0.1.0/mod.ts",
+    "esbuild-plugin-html": "npm:@chialab/esbuild-plugin-html@0.17.2",
     "esbuild-sass-plugin": "npm:esbuild-sass-plugin@2.6.0",
     "posix": "https://deno.land/std@0.174.0/path/mod.ts",
     "std/": "https://deno.land/std@0.178.0/"
