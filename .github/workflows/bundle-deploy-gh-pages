@@ -5,9 +5,9 @@ name: bundle and deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: [main]
   pull_request:
-    branches: ["main"]
+    branches: [main]
 
 permissions:
   contents: read
