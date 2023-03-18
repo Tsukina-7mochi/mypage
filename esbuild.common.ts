@@ -28,6 +28,8 @@ const config: Partial<esbuild.BuildOptions> = {
       files: [
         { from: 'index.html', to: 'index.html' },
         { from: 'imgs/*', to: 'imgs/[name][ext]' },
+        { from: 'fonts/*', to: 'fonts/[name][ext]' },
+        { from: 'style/fonts.css', to: 'style/fonts.css' },
       ]
     }),
     resultPlugin()

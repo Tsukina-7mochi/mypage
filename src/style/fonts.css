@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'Makinas-4-Flat';
+  src: url('../fonts/Makinas-4-Flat.ttf') format('ttf'),
+       url('../fonts/Makinas-4-Flat.woff') format('woff');
+}

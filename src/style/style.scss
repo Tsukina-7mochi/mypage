@@ -30,6 +30,12 @@ main {
   flex-direction: row;
   font-size: 20px;
   line-height: 1.25em;
+  font-family: 'Kiwi Maru', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Makinas-4-Flat', Arial, Helvetica, sans-serif;
+  }
 
   @media screen and (max-width: $screen-width-one-column) {
     flex-direction: column;
@@ -39,21 +45,32 @@ main {
 
 main > #layout_sidebar {
   max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media screen and (max-width: $screen-width-one-column) {
-    max-width: 60em;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 40em;
+    margin: 0 auto;
   }
 
-  >h1 {
+  > * {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+
+  > h1 {
     line-height: 1.25em;
   }
 
-  >img.profile {
-    max-width: 380px;
+  > section > h2 {
+    @include bottomSeparator(2px, 0.25em);
+    text-align: center;
+  }
+
+  > img.profile {
+    margin-top: 2em;
+    max-width: 300px;
     width: 100%;
     border-radius: 2.5%
   }
