@@ -12,7 +12,7 @@ const cachePath = 'cache';
 const config: Partial<esbuild.BuildOptions> = {
   entryPoints: [
     posix.join(srcPath, 'main.ts'),
-    posix.join(srcPath, 'style.scss')
+    posix.join(srcPath, 'style/style.scss'),
   ],
   bundle: true,
   outdir: destPath,
@@ -28,8 +28,7 @@ const config: Partial<esbuild.BuildOptions> = {
       files: [
         { from: 'index.html', to: 'index.html' },
         { from: 'imgs/*', to: 'imgs/[name][ext]' },
-      ],
-      outputLog: true
+      ]
     }),
     resultPlugin()
   ]
