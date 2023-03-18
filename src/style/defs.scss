@@ -1,0 +1,21 @@
+@import "./defs-screen.scss";
+@import "./defs-color.scss";
+
+@mixin bottomSeparator($width, $spacing) {
+  &::after {
+    @content;
+    display: block;
+    width: 100%;
+    height: $width;
+    margin-top: $spacing;
+    content: "";
+    background: $gradient-basic;
+  }
+}
+
+@mixin normalBoxRounded {
+  border-radius: $radius;
+  box-shadow: $shadow-normal;
+  padding: 1em;
+  @content;
+}

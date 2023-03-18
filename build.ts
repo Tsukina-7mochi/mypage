@@ -19,7 +19,8 @@ if(options.dev && options.watch) {
   console.log('Watching...');
 
   for await(const _ of readLines(Deno.stdin)) {
-    // do nothing
+    // manually rebuild
+    await ctx.rebuild().catch((_) => {});
   }
 } else {
   // just build
