@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/main.ts"],
+  "sourcesContent": ["globalThis.addEventListener('load', () => {\n});\n"],
+  "mappings": "MAAA,WAAW,iBAAiB,OAAQ,IAAM,CAC1C,CAAC",
+  "names": []
+}
