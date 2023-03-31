@@ -7,46 +7,27 @@ $c-def-white: #FFFFFF;
 $c-def-black: #38393f;
 $c-def-gray: #aeb4b6;
 
-//// theme definition ////
+:root {
+  --c-bg: #{$c-def-white};
+  --c-bg-hover: #{darken($c-def-white, 2%)};
+  --c-bg-active: #{darken($c-def-white, 4%)};
+  --c-main: #{$c-def-black};
+  --c-link: #{$c-def-highlight};
+  --c-link-visited: #{$c-def-highlight3};
+  --c-border: #{$c-def-gray};
+  --c-shadow: #{rgba($c-def-black, 40%)};
 
-// light
-$c-l-bg: $c-def-white;
-$c-l-bg-hover: darken($c-def-white, 2%);
-$c-l-bg-active: darken($c-def-white, 4%);
-$c-l-main: $c-def-black;
-$c-l-link: $c-def-highlight;
-$c-l-link-visited: $c-def-highlight3;
-$c-l-border: $c-def-gray;
-
-// dark
-$c-d-bg: $c-def-black;
-$c-d-bg-hover: lighten($c-def-black, 2%);
-$c-d-bg-active: lighten($c-def-black, 4%);
-$c-d-main: darken($c-def-white, 4%);
-$c-d-link: $c-def-highlight;
-$c-d-link-visited: $c-def-highlight3;
-$c-d-border: $c-def-gray;
-
-body {
-  --c-bg: $c-l-bg;
-  --c-bg-hover: $c-l-bg-hover;
-  --c-bg-active: $c-l-bg-active;
-  --c-main: $c-l-main;
-  --c-link: $c-l-link;
-  --c-link-visited: $c-l-link-visited;
-  --c-border: $c-l-border;
-}
-body.dark {
-  --c-bg: $c-d-bg;
-  --c-bg-hover: $c-d-bg-hover;
-  --c-bg-active: $c-d-bg-active;
-  --c-main: $c-d-main;
-  --c-link: $c-d-link;
-  --c-link-visited: $c-d-link-visited;
-  --c-border: $c-d-border;
+  @media (prefers-color-scheme: dark) {
+    --c-bg: #{$c-def-black};
+    --c-bg-hover: #{lighten($c-def-black, 2%)};
+    --c-bg-active: #{lighten($c-def-black, 4%)};
+    --c-main: #{darken($c-def-white, 4%)};
+    --c-link: #{$c-def-highlight};
+    --c-link-visited: #{$c-def-highlight3};
+    --c-border: #{$c-def-gray};
+    --c-shadow: #{rgba($c-def-white, 40%)};
+  }
 }
 
-//// other definition ////
 $radius: 1em;
 $gradient-basic: linear-gradient(to right, $c-def-highlight, $c-def-highlight2);
-$shadow-normal: 0px 0px 5px rgba($c-def-black, 40%);
