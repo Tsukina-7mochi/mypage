@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../src/main.ts"],
-  "sourcesContent": ["globalThis.addEventListener('load', () => {\n});\n"],
-  "mappings": "MAAA,WAAW,iBAAiB,OAAQ,IAAM,CAC1C,CAAC",
-  "names": []
+  "sourcesContent": ["globalThis.addEventListener('DOMContentLoaded', () => {\n  globalThis.matchMedia('(prefers-color-scheme: dark)')\n    .addEventListener('change', (preference) => {\n      document.querySelectorAll('div.repo-card').forEach((el) => {\n        (el as HTMLElement).dataset['theme'] = preference ? 'dark-theme' : '';\n      });\n    });\n});\n"],
+  "mappings": "MAAA,WAAW,iBAAiB,mBAAoB,IAAM,CACpD,WAAW,WAAW,8BAA8B,EACjD,iBAAiB,SAAWA,GAAe,CAC1C,SAAS,iBAAiB,eAAe,EAAE,QAASC,GAAO,CACxDA,EAAmB,QAAQ,MAAWD,EAAa,aAAe,EACrE,CAAC,CACH,CAAC,CACL,CAAC",
+  "names": ["preference", "el"]
 }
