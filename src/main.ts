@@ -1,7 +1,8 @@
 globalThis.addEventListener('DOMContentLoaded', () => {
-  if (globalThis.matchMedia('(prefers-color-scheme: dark)').matches == true) {
-    document.querySelectorAll('div.repo-card').forEach((el) => {
-      (el as HTMLElement).dataset['theme'] = 'dark-theme';
+  globalThis.matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', (preference) => {
+      document.querySelectorAll('div.repo-card').forEach((el) => {
+        (el as HTMLElement).dataset['theme'] = preference ? 'dark-theme' : '';
+      });
     });
-  }
 });
