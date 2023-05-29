@@ -4,13 +4,11 @@ import sassPlugin from 'esbuild-plugin-sass';
 import esbuildCachePlugin from 'esbuild-plugin-cache';
 import copyPlugin from 'esbuild-plugin-copy';
 import resultPlugin from 'esbuild-plugin-result';
-import importmap from './import_map.json' assert { type: 'json' };
+import importMap from './import_map.json' assert { type: 'json' };
+import lockMap from './lock.json' assert { type: 'json' };
 
 const srcPath = 'src';
 const destPath = 'dist';
-const cachePath = 'cache';
-
-const lockMap = JSON.parse(Deno.readTextFileSync('./deno.lock'));
 const cacheDir = await esbuildCachePlugin.util.getDenoDir();
 
 const options = (dev: boolean): esbuild.BuildOptions => ({
@@ -25,7 +23,7 @@ const options = (dev: boolean): esbuild.BuildOptions => ({
     esbuildCachePlugin({
       lockMap,
       denoCacheDirectory: cacheDir,
-      importmap
+      importmap: importMap
     }),
     sassPlugin(),
     copyPlugin({
