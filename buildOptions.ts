@@ -1,15 +1,19 @@
 import * as esbuild from 'esbuild';
 import { posix } from 'posix';
 import sassPlugin from 'esbuild-plugin-sass';
-import { esbuildCachePlugin } from 'esbuild-plugin-cache';
+import esbuildCachePlugin from 'esbuild-plugin-cache';
 import copyPlugin from 'esbuild-plugin-copy';
 import resultPlugin from 'esbuild-plugin-result';
+import importmap from './import_map.json' assert { type: 'json' };
 
 const srcPath = 'src';
 const destPath = 'dist';
 const cachePath = 'cache';
 
-const config: Partial<esbuild.BuildOptions> = {
+const lockMap = JSON.parse(Deno.readTextFileSync('./deno.lock'));
+const cacheDir = await esbuildCachePlugin.util.getDenoDir();
+
+const options = (dev: boolean): esbuild.BuildOptions => ({
   entryPoints: [
     posix.join(srcPath, 'main.ts'),
     posix.join(srcPath, 'style/style.scss'),
@@ -19,7 +23,9 @@ const config: Partial<esbuild.BuildOptions> = {
   platform: 'browser',
   plugins: [
     esbuildCachePlugin({
-      directory: cachePath
+      lockMap,
+      denoCacheDirectory: cacheDir,
+      importmap
     }),
     sassPlugin(),
     copyPlugin({
@@ -33,7 +39,9 @@ const config: Partial<esbuild.BuildOptions> = {
       ]
     }),
     resultPlugin()
-  ]
-}
+  ],
+  minify: !dev,
+  sourcemap: dev ? 'inline' : 'linked',
+});
 
-export default config;
+export default options;
