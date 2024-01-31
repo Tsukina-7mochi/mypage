@@ -13,18 +13,25 @@
     ]
   },
   "lint": {
-    "include": ["src/"],
+    "include": [
+      "src/"
+    ],
     "rules": {
-      "tags": ["recommended"]
+      "tags": [
+        "recommended"
+      ]
     }
   },
   "fmt": {
-    "include": ["src/"],
+    "include": [
+      "src/"
+    ],
     "singleQuote": true
   },
-  "exclude": ["dist/"],
+  "exclude": [
+    "dist/"
+  ],
   "importMap": "import_map.json",
-  "lock": "lock.json",
   "tasks": {
     "build": "deno run --allow-run --allow-read --allow-write --allow-env --allow-net --allow-ffi ./build.ts",
     "dev": "deno run --allow-run --allow-read --allow-write --allow-env --allow-net --allow-ffi ./build.ts --dev",

@@ -5,11 +5,12 @@ import esbuildCachePlugin from 'esbuild-plugin-cache';
 import copyPlugin from 'esbuild-plugin-copy';
 import resultPlugin from 'esbuild-plugin-result';
 import importMap from './import_map.json' assert { type: 'json' };
-import lockMap from './lock.json' assert { type: 'json' };
 
 const srcPath = 'src';
 const destPath = 'dist';
 const cacheDir = await esbuildCachePlugin.util.getDenoDir();
+
+const lockMap = JSON.parse(Deno.readTextFileSync('./deno.lock'));
 
 const options = (dev: boolean): esbuild.BuildOptions => ({
   entryPoints: [
