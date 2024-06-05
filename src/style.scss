@@ -3,9 +3,13 @@ $color-fg: #ffffff;
 
 $border-radius: 4px;
 
+.nowrap {
+  word-break: keep-all;
+}
+
 body {
   margin: 0;
-  padding: 2em 0;
+  padding: 2em 1em;
   font-family: "Zen Kaku Gothic New", sans-serif;
   background-color: $color-bg;
   color: $color-fg;
