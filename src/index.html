@@ -11,7 +11,16 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
 
   <link rel="stylesheet" href="./style.css">
-
+  <script>
+    const openEmail = function() {
+      const address = 'Tsukina7mochi' + '\u0040' + 'gmail.com';
+      const a = document.createElement('a');
+      a.href = `mailto:${address}`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
   <title>Mooncake Sugar / 糖衣月餅</title>
 </head>
 <body>
@@ -44,7 +53,7 @@
       <a href="https://github.com/Tsukina-7mochi">
         <i class="fa-brands fa-github"></i>
       </a>
-      <a href="mailto:Tsukina7mochi@gmail.com">
+      <a href="javascript:openEmail()">
         <i class="fa-solid fa-envelope"></i>
       </a>
     </nav>
