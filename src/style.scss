@@ -1,0 +1,70 @@
+$color-bg: #000000;
+$color-fg: #ffffff;
+
+$border-radius: 4px;
+
+body {
+  margin: 0;
+  padding: 2em 0;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  background-color: $color-bg;
+  color: $color-fg;
+}
+
+main {
+  max-width: 40em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+div#thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  img {
+    display: block;
+    width: 60%;
+    max-width: min(1600px, 100%);
+    min-width: 200px;
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated;
+  }
+}
+
+img#profile {
+  display: block;
+  margin: 0 auto;
+  width: 6em;
+  border-radius: $border-radius;
+}
+
+main > nav {
+  padding: 1em 0;
+
+  a {
+    color: $color-fg;
+  }
+}
+
+nav#social {
+  a {
+    display: inline-block;
+    padding: 0.05em 0.25em;
+    margin: 0 0.25em;
+    border-radius: $border-radius;
+    font-size: 1.5em;
+    text-decoration: none;
+    background-color: $color-fg;
+    color: $color-bg;
+
+    &:hover {
+      background-color: darken($color-fg, 15%);
+    }
+
+    &:active {
+      background-color: darken($color-fg, 25%);
+    }
+  }
+}
